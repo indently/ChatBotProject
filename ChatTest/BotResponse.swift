@@ -13,7 +13,11 @@ func getBotResponse(message: String) -> String {
     
     if tempMessage.contains("hello") {
         return "Hey there!"
+    } else if tempMessage.contains("goodbye") {
+        return "Talk to you later!"
+    } else if tempMessage.contains("how are you") {
+        return "I'm fine, how about you?"
     } else {
-        return "I'm still being developed!"
+        return "That's cool."
     }
 }

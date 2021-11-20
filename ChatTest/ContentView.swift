@@ -9,10 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var messageText = ""
-    @State var messages: [String] = ["How are you doing today?"]
+    @State var messages: [String] = ["Welcome to Chat Bot 2.0!"]
     
     var body: some View {
         VStack {
+            HStack {
+                Text("iBot")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Image(systemName: "bubble.left.fill")
+                    .font(.system(size: 26))
+                    .foregroundColor(Color.blue)
+            }
+            
             ScrollView {
                 ForEach(messages, id: \.self) { message in
                     // If the message contains [USER], that means it's us
@@ -27,7 +37,8 @@ struct ContentView: View {
                                 .foregroundColor(Color.white)
                                 .background(Color.blue.opacity(0.8))
                                 .cornerRadius(10)
-                                .padding(10)
+                                .padding(.horizontal, 16)
+                                .padding(.bottom, 10)
                         }
                     } else {
                         
@@ -35,16 +46,18 @@ struct ContentView: View {
                         HStack {
                             Text(message)
                                 .padding()
-                                .background(Color.gray.opacity(0.2))
+                                .background(Color.gray.opacity(0.15))
                                 .cornerRadius(10)
-                                .padding(10)
+                                .padding(.horizontal, 16)
+                                .padding(.bottom, 10)
                             Spacer()
                         }
                     }
                     
                 }.rotationEffect(.degrees(180))
-            }.rotationEffect(.degrees(180))
-                .background(Color.gray.opacity(0.1))
+            }
+            .rotationEffect(.degrees(180))
+            .background(Color.gray.opacity(0.1))
             
             
             // Contains the Message bar
