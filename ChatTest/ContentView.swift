@@ -79,8 +79,6 @@ struct ContentView: View {
                 .padding(.horizontal, 10)
             }
             .padding()
-            
-            
         }
     }
     
@@ -93,12 +91,8 @@ struct ContentView: View {
                 withAnimation {
                     messages.append(getBotResponse(message: message))
                 }
-                
             }
-            
-            
         }
-        
     }
 }
 
